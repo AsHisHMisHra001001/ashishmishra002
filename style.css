@@ -1,0 +1,220 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #0ff;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Particles Background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0ff;
+  margin-bottom: 10px;
+}
+
+header h1,
+header h3 {
+  font-size: 3rem;
+  color: #0ff;
+  margin-bottom: 5px;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Work Showcase Section */
+.work-showcase {
+  margin-top: 40px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #0ff;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0ff, transparent);
+}
+
+/* Work Grid Styling */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Individual Work Item */
+.work-item {
+  background-color: rgba(17, 17, 17, 0.7);
+  padding: 20px;
+  border: 1px solid #0ff;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.work-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+.work-item h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #0ff;
+}
+
+/* Media Containers */
+.image-container,
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.work-item img,
+.work-item video {
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+/* Hover Effects */
+.hover-zoom:hover {
+  transform: scale(1.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px #0ff;
+}
+
+/* Overlay Button */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay,
+.video-container:hover .overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: #0ff;
+  border: 2px solid #0ff;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.view-btn:hover {
+  background: #0ff;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.social-links {
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  color: #0ff;
+  font-size: 1.5rem;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+  text-shadow: 0 0 10px #0ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  to { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1,
+  header h3 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
